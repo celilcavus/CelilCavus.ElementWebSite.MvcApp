@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Service";
+    ViewBag.SubTitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq";
+}
+@model IEnumerable<ServiceListDto>
+
+    <h1 class="about_text">@ViewBag.Title</h1>
+    <p class="ipsum_text">@ViewBag.SubTitle</p>
+    <div class="service_section_2">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-12 col-lg-4">
+                    <div class="icon_1"><img src="~/Content/images/@item.ServiceIcon"></div>
+                    <h1 class="website_text">@item.ServiceTitle</h1>
+                    <p class="dolor_text">
+                        @item.ServiceDescription
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+

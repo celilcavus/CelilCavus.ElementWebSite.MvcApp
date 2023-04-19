@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ContactDtoInsert
+@using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+{
+    <div class="contact_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 h-100">
+                    <h1 class="contact_text">Requeste a call back</h1>
+                    <div class="contact_main">
+                        <div class="mail_section">
+                            @Html.TextBoxFor(x => x.Name, new { @class = "mail_text", @placeholder = "Name" })
+                            <p class="">@Html.ValidationMessageFor(x => x.Name, null, new { @class = "mt-1 mb-1 text-white" })</p>
+
+                            @Html.TextBoxFor(x => x.Email, new { @class = "mail_text", @placeholder = "Email" })
+                            <p class="">@Html.ValidationMessageFor(x => x.Email, null, new { @class = "mt-1 mb-1 text-white" })</p>
+
+                            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "mail_text", @placeholder = "Phone" })
+                            <p class="">@Html.ValidationMessageFor(x => x.PhoneNumber, null, new { @class = "mt-1 mb-1 text-white" })</p>
+
+                            @Html.TextAreaFor(x => x.Message, new { @class = "message_text w-100", @placeholder = "Message" })
+                            <p class="">@Html.ValidationMessageFor(x => x.Message, null, new { @class = "mt-1 mb-1 text-white" })</p>
+
+                            <div class="send_bt">
+                                <button type="submit" class="send_text btn">SEND</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact_bg"><img src="~/Content/images/contact-bg.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
